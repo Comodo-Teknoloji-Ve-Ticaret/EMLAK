@@ -6,12 +6,18 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const distDir = path.resolve(__dirname, '../dist');
+const docsDir = path.resolve(__dirname, '../../docs');
 const indexPath = path.join(distDir, 'index.html');
 const notFoundPath = path.join(distDir, '404.html');
 
 if (fs.existsSync(indexPath)) {
   fs.copyFileSync(indexPath, notFoundPath);
   console.log('✓ 404.html successfully generated from index.html for GitHub Pages SPA support');
+
+  // Copy dist contents to root docs/ directory for branch deployment support
+  fs.cpSync(distDir, docsDir, { recursive: true });
+  console.log('✓ Successfully synced dist to root docs/ directory for GitHub Pages');
 } else {
   console.error('index.html not found in dist directory.');
 }
+
