@@ -1,4 +1,4 @@
-import { Currency } from '../types';
+import type { Currency } from '../types';
 import { currencyRates } from '../data/mockProperties';
 
 export function formatCurrencyPrice(amountTRY: number, currency: Currency): string {

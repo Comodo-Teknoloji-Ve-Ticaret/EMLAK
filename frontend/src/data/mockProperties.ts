@@ -1,4 +1,4 @@
-import { Agent, LocationHighlight, Property, Testimonial } from '../types';
+import type { Agent, LocationHighlight, Property, Testimonial } from '../types';
 
 export const mockAgents: Agent[] = [
   {

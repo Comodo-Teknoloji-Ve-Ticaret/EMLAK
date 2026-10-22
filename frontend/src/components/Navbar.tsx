@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Building2, Heart, Moon, Sun, PlusCircle, Menu, X } from 'lucide-react';
-import { Currency, Theme } from '../types';
+import type { Currency, Theme } from '../types';
 
 interface NavbarProps {
   currentTheme: Theme;
